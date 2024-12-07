@@ -1,9 +1,8 @@
-
-export default function Page() {
+export default function Page(): JSX.Element {
+  
   return (
-    <div className="bg-sky-200">
-      <h1>hello from the webapp</h1>
-    </div>
-   
+   <div>
+      <h1 className="text-2xl">Hi there</h1>
+   </div>
   );
 }
