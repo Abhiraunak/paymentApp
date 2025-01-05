@@ -1,6 +1,3 @@
-import { PrismaClient } from '@prisma/client/edge'
-const prisma = new PrismaClient();
-
 export default function Home() {
   return (
     <div className="text-blue-800">
