@@ -2,7 +2,7 @@ import db from "@repo/db/client";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
-export const NEXT_AUTH ={
+export const authOptions={
     providers: [
       CredentialsProvider({
           name: 'Credentials',
@@ -39,7 +39,7 @@ export const NEXT_AUTH ={
                         password: hashedPassword
                     }
                 });
-            
+            //  we can add email validation here
                 return {
                     id: user.id.toString(),
                     name: user.name,
