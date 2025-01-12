@@ -26,6 +26,9 @@ export default async function p2pTransfer(to: string, amount: number) {
     }
 
     await prisma.$transaction(async (tx) => {
+        // it explicitly lock the balance row for the sending user so that only one transaction can 
+        // access it at at time, and the other one waits until the first transaction has committed
+        await tx.$queryRaw`SELECT * FROM "Balance" WHERE "userId" = ${Number(from)} FOR UPDATE`;
         const fromBalance = await tx.balance.findUnique({
             where: {
                 userId: Number(from)
