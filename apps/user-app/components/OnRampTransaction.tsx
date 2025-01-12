@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { Card } from "@repo/ui/card"
 
 export const OnRampTransactions = ({
