@@ -1,5 +1,5 @@
 
-import { Button } from "./button.js";
+import { Button } from "./Button";
 
 interface AppbarProps {
     user?: {
