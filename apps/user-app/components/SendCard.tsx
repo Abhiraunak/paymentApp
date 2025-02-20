@@ -5,10 +5,13 @@ import { TextInput } from "@repo/ui/textinput";
 import { Center } from "@repo/ui/center";
 import { useState } from "react";
 import P2PTransfer from "../app/lib/actions/P2PTrasfer";
+import { ToastContainer, toast } from 'react-toastify';
 
 export function SendCard() {
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
+   
+    const notify = () => toast('Wow so easy !');
 
     return <div className="h-[60vh]">
         <Center>
@@ -25,7 +28,9 @@ export function SendCard() {
                         <Button onClick={async() => {
                             await P2PTransfer(number, Number(amount) * 100);
                         }}
-                        >Send</Button>
+                        >Send
+                        </Button>
+                        <ToastContainer />
                     </div>
                 </div>
             </Card>
